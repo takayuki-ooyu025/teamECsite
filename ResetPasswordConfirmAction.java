@@ -48,7 +48,7 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 
 		UserInfoDAO userInfoDAO = new UserInfoDAO();
 		try {
-			if(!userInfoDAO.isExistsUserInfo(userId, password)){//UserInfoDAOで行われた処理がtrueなら下の処理を実行しない
+			if(!userInfoDAO.isExistsUserInfo(userId, password)){//UserInfoDAOで行われた処理がtrueならエラーメッセージを出さない
 				passwordDatabaseErrorMessage = "ユーザIDと現在のパスワードが異なります。";
 				return result;
 			}
